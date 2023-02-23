@@ -1,0 +1,86 @@
+<div class="container">
+    <form (submit)="OnSubmit()">
+        <div class="container d-flex justify-content-center text-center mt-3">
+            <!-- {{categories | json}} -->
+            <!-- {{expenseData | json}} -->
+            <mat-chip-listbox aria-label="Fish selection">
+                <mat-chip-option color="primary" selected>Add Expenses</mat-chip-option>
+            </mat-chip-listbox>
+        </div>
+        <div class="row">
+            <div class="col-md-4 pt-4">
+                <mat-form-field class="full-width ">
+                    <mat-label>Expense Title</mat-label>
+                    <input type="name" matInput placeholder="Expense Title" [(ngModel)]="expenseData.expTitle"
+                        name="expTitle">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4 pt-4">
+                <mat-form-field appearance="fill" class="full-width ">
+                    <mat-label>Choose the Category</mat-label>
+                    <mat-select [(ngModel)]="expenseData.expCategory" name="expCategory">
+                        <div *ngIf="categories">
+                            <div *ngFor="let category of categories">
+                                <mat-option value={{category.catName}}>{{ category.catName }}
+                                    <!-- <span>{{category.catDesc}}</span> -->
+                                </mat-option>
+                            </div>
+                        </div>
+
+                    </mat-select>
+
+
+
+
+                </mat-form-field>
+            </div>
+            <div class="col-md-4 pt-4">
+                <mat-form-field class="full-width ">
+                    <mat-label>Price</mat-label>
+                    <input type="number" matInput placeholder="Expense Price" [(ngModel)]="expenseData.price"
+                        name="price">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <mat-form-field class="full-width">
+            <mat-label>Expense Description</mat-label>
+            <textarea matInput placeholder="Description" name="expDesc" [(ngModel)]="expenseData.expDesc"></textarea>
+        </mat-form-field>
+        <div class="container text-center">
+            <button mat-raised-button color="primary">Add Expense</button>
+        </div>
+    </form>
+    <hr>
+    <div class="container">
+        <mat-chip-listbox class="mat-mdc-chip-set-stacked" aria-label="Color selection">
+            <mat-chip-option color="primary" selected>
+                Recently Added | Updated ...
+            </mat-chip-option>
+        </mat-chip-listbox>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Expense title</th>
+                    <th scope="col">Expense Category</th>
+                    <th scope="col">On Date</th>
+                    <th scope="col">Price</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngIf="expenses">
+                    <ng-container *ngFor="let expense of expenses;">
+                        <tr>
+                            <th scope="row">{{expense.expTitle}}</th>
+                            <td>{{expense.expCategory}}</td>
+                            <td>{{expense.expOn}}</td>
+                            <td>{{expense.price | currency:'INR'}}</td>
+                            
+                        </tr>
+                    </ng-container>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>

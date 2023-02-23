@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="d-flex justify-content-between">
+        <div class="left d-flex justify-content-center" id="left">
+            <img  class=""
+                    src="https://t3.ftcdn.net/jpg/03/39/70/90/360_F_339709048_ZITR4wrVsOXCKdjHncdtabSNWpIhiaR7.jpg"
+                    alt="register_banner">
+        </div>
+        <div class="right container text-center ">
+            <h2 class="main-color">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRx0GLTmfxMp21re_a878iiNlNTuiyd2kW0w&usqp=CAU" class="image-logo"/>
+                Register Here
+            </h2>
+            
+            <form class="example-form" (submit)="onSubmit()">
+                <!-- User Name Field -->
+                <mat-form-field class="full-width">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput name="email" [(ngModel)]="regForm.email" >
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <!-- Fname and Lname Field  -->
+                
+                <div class="d-flex justify-content-between ">
+                    <mat-form-field class="full-width">
+                        <mat-label>First name</mat-label>
+                        <input matInput name="fname" [(ngModel)]="regForm.fname" >
+                    </mat-form-field>
+                    <mat-form-field class="full-width">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput name="lname" [(ngModel)]="regForm.lname" >
+                    </mat-form-field>
+                </div>
+
+                <!-- Password Filed -->
+                <mat-form-field class="full-width">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput name="password" [(ngModel)]="regForm.password" >
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <!-- About Filed -->
+                
+                  <mat-form-field class="full-width">
+                    <mat-label>About Me</mat-label>
+                    <textarea matInput name="about" [(ngModel)]="regForm.about" ></textarea>
+                  </mat-form-field>
+                  <button mat-raised-button color="primary" type="submit">Register</button>
+
+            </form>
+            <div class="d-flex justify-content-between">
+                <a href="#">Forgot password..</a>
+                <a href="#" routerLink="/login">Login here</a>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+</div>

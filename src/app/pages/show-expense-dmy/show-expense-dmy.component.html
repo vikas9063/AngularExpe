@@ -1,0 +1,94 @@
+<div class="container">
+    <form (submit)="OnSubmit()">
+        <div class="row pt-2">
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Choose a date</mat-label>
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <input matInput [matDatepicker]="picker" name="formDate" [(ngModel)]="formDate">
+
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="full-width ">
+                    <mat-label>Choose the Category</mat-label>
+                    <mat-select name="expCategory" [(ngModel)]="expenseType">
+                        <mat-option value="daily">
+                            daily Report
+                        </mat-option>
+                        <mat-option value="monthly">
+                            Monthly Report
+                        </mat-option>
+                        <mat-option value="yearly">
+                            Yearly Report
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <button mat-flat-button color="primary" class="m-3">Submit</button>
+            </div>
+        </div>
+    </form>
+
+
+    <hr>
+
+    <div class="tableScroll">
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Expense On</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="resultData.length>0">
+                <ng-container *ngFor="let data of resultData">
+                    <tr>
+                        <th scope="row">{{data.expTitle}}</th>
+                        <td>{{data.expDesc}}</td>
+                        <td>{{data.price | currency:'INR'}}</td>
+                        <td>{{data.expOn}}</td>
+                        <td>{{data.expCategory}}</td>
+                        <td>
+                            <button mat-mini-fab color="primary" class="m-2" (click)="OpenDialog(data)">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                            <button mat-mini-fab color="accent" (click)="deleteExp(data.expId)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="resultData.length>0">
+        <nav aria-label="...">
+            <ul class="pagination">
+                <li class="page-item {{prevDisabled}}">
+                    <a class="page-link" (click)="OnChange(rawData.currentPage-1)">Previous</a>
+                </li>
+                <ng-container *ngIf="rawData">
+                    <ng-container *ngFor="let page of pages">
+                        <li class="page-item {{page==rawData.currentPage+1?'active':''}}">
+                            <a class="page-link" (click)="OnChange(page-1)">{{page}}</a>
+                        </li>
+                    </ng-container>
+                </ng-container>
+                <li class="page-item {{nextDisabled}}">
+                    <a class="page-link" (click)="OnChange(rawData.currentPage+1)">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+

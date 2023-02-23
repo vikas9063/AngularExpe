@@ -1,0 +1,21 @@
+.expense-logo{
+    width: 100%;
+    padding: 30px 30px;
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(5px);
+    filter: blur(1px);
+}
+.right-container{
+    padding: 30px 0px;
+}
+.form-group{
+    margin: 10px 0px;
+}
+.full-width{
+    width: 100%;
+  }
+.mat-icon{
+    font-size: 20px;
+}

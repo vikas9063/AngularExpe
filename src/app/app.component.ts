@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RegUser } from './types/RegUser';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'expensetracker';
+
+ 
+
+
 }

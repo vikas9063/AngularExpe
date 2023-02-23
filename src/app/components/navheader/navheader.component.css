@@ -1,0 +1,11 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.profile-img{
+  display: flex;
+  height: 30px;
+  width: 30px;
+  justify-content: center;
+  border-radius: 50%;
+  object-fit: cover;
+}

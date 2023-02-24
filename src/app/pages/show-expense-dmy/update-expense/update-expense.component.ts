@@ -50,6 +50,8 @@ export class UpdateExpenseComponent {
     this.expense.expOnDate = date.getDate();
     this.expense.expOnMonth=date.getMonth()+1;
     this.expense.expOnYear = date.getFullYear();
+    console.log(date.getHours())
+    this.expense.expOn=`${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
     //console.log(this.expense);
     }
     let user=this.userService.getUserIdOriginal();

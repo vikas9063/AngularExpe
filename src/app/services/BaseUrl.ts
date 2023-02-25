@@ -1,1 +1,1 @@
-export const BASE_URL="http://localhost:9696/api/v1";
+export const BASE_URL="https://expense-be-vkyapp.onrender.com/api/v1";

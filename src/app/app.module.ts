@@ -38,13 +38,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { SpentcardComponent } from './pages/user/dashboard/spentcard/spentcard.component';
 import { ShowExpenseDmyComponent } from './pages/show-expense-dmy/show-expense-dmy.component';
 import { UpdateExpenseComponent } from './pages/show-expense-dmy/update-expense/update-expense.component';
-
-<<<<<<< HEAD
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
 
 
-=======
->>>>>>> 5e0f400b044e49e92f14a0343b62e42a37fea040
+
 
 
 
@@ -91,17 +88,14 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
     MatCheckboxModule,
     MatRadioModule,
     MatDatepickerModule,
-<<<<<<< HEAD
     MatNativeDateModule,
     NgxUiLoaderModule,
     NgxUiLoaderHttpModule.forRoot({
       showForeground:true
     }),
 
-=======
-    MatNativeDateModule
     
->>>>>>> 5e0f400b044e49e92f14a0343b62e42a37fea040
+
     
   ],
 

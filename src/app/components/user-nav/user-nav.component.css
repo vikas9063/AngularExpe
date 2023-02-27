@@ -1,0 +1,15 @@
+.custom-color-light{
+    background-color: rgba(63,81,181,10%) !important;
+    padding: 5px 100px;
+}
+button{
+    margin: 0px 10px;
+}
+@media only screen and (max-width: 600px) {
+    .custom-color-light {
+        padding: 5px 0px;
+    }
+    button{
+        margin: 0px 3px;
+    }
+  }

@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="mt-3 text-center  ">
+        <mat-icon>edit_note </mat-icon>
+        <h3>Update Expenses</h3>
+    </div>
+    <form>
+        <!-- {{expense | json}} -->
+        <div class="form-group">
+            <label class="form-label">Expense Title</label>
+            <input type="text"  class="form-control" name="expTitle" [(ngModel)]="expense.expTitle">
+        </div>
+        <div class="form-group mt-3">
+            <label class="form-label">Expense Category</label>
+            <input type="text" class="form-control" name="expCategory" [(ngModel)]="expense.expCategory">
+        </div>
+        <div class="form-group mt-3">
+            <label for="floatingTextarea" class="form-label">Description</label>
+            <textarea class="form-control" placeholder="Expense Description" id="floatingTextarea"
+             name="expDesc" [(ngModel)]="expense.expDesc"
+            ></textarea>
+         
+          </div>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <div>
+                    <label class="form-label w-50">Expense Price</label>
+                    <input type="number"  class="form-control" name="price" [(ngModel)]="expense.price">
+                </div>
+                
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <label class="form-label w-50">Date</label>
+                    <input type="date"  class="form-control" name="expOn" [(ngModel)]="formDate">
+                </div>
+            </div>
+        </div>
+        <div class="container m-3 text-center">
+            <button class="btn btn-sm btn-warning m-2"(click)="UpdateExp()" >Update</button>
+            <button class="btn btn-sm btn-danger m-2" (click)="closeDialog()">Cancel</button>
+        </div>
+    </form>
+
+</div>

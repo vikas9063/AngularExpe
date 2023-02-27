@@ -1,0 +1,36 @@
+
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>collections_bookmark</mat-icon>
+  </button>
+  <span>ExpenseTracker</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon mr20 ml20" [matMenuTriggerFor]="menu" aria-label="Example icon-button with heart icon">
+    <mat-icon *ngIf="!isLoggedIn">account_circle</mat-icon>
+    <img class="profile-img" *ngIf="isLoggedIn" [src]="loadProfilePic()">
+  </button>
+
+</mat-toolbar>
+
+
+
+<mat-menu #menu="matMenu" >
+  <button *ngIf="!isLoggedIn"  mat-menu-item routerLink="/login">
+    <mat-icon>login</mat-icon>
+    <span>Login</span>
+  </button>
+  <button *ngIf="isLoggedIn && userData"  mat-menu-item routerLink="/profile">
+    <mat-icon>face</mat-icon>
+    <span>{{userData.userName}}</span>
+  </button>
+  <button *ngIf="!isLoggedIn" mat-menu-item routerLink="/register">
+    <mat-icon>person_add</mat-icon>
+    <span>Register</span>
+  </button>
+  <button *ngIf="isLoggedIn" mat-menu-item (click)="handleLogout()">
+    <mat-icon>logout</mat-icon>
+    <span>Logout</span>
+  </button>
+ 
+</mat-menu>
+<app-user-nav *ngIf="isLoggedIn"></app-user-nav>

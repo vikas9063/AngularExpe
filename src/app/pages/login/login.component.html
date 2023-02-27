@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="d-flex justify-content-center pt-2">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div class="container text-center">
+                    <img src="https://as1.ftcdn.net/v2/jpg/03/04/56/70/1000_F_304567015_bOgWnqlaRs1HASlySQkF01fJjS4xQpJs.jpg"
+                        class="login-logo" />
+
+                </div>
+            </mat-card-header>
+
+            <mat-card-content>
+                <form (submit)="onSubmit()">
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Username/Email</mat-label>
+                        <input matInput placeholder="Username/Email" name="username"  [(ngModel)]="loginData.username">
+                        <mat-icon matSuffix color="primary">mail</mat-icon>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="loginData.password">                     
+                        <mat-icon matSuffix color="primary">key</mat-icon>
+                    </mat-form-field>
+                    <div class="container text-center">
+                        <button mat-raised-button color="primary" type="submit">Login</button>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <a routerLink="/register">Register Here</a>
+                    </div>
+                </form>
+            </mat-card-content>
+
+        </mat-card>
+    </div>
+</div>

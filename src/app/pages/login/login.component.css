@@ -1,0 +1,12 @@
+.example-card {
+    max-width: 600px;
+    min-width: 200px;
+  }
+  .login-logo{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+  }
+  .full-width{
+    width: 100%;
+  }

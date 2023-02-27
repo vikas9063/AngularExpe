@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="container text-center">
+        <h3><strong><u>Categories</u></strong></h3>
+    </div>
+
+
+
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngIf="category">
+                <ng-container *ngFor="let c of category;">
+                    <tr>
+                        <td scope="row">{{c.catName}}</td>
+                        <td>{{c.catDesc}}</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-danger" (click)="deleteCat(c.catName)"><span
+                                    class="fa  fa-times-circle"></span></button>
+                        </td>
+
+                    </tr>
+                </ng-container>
+            </ng-container>
+
+        </tbody>
+    </table>
+    <div class="container text-center">
+        <mat-dialog-actions>
+            <button mat-raised-button color="primary" (click)="openDialog()">Add Category</button>
+        </mat-dialog-actions>
+
+    </div>
+    <hr>
+</div>

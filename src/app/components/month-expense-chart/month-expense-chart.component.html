@@ -1,0 +1,29 @@
+<div class="container">
+
+    <canvas [id]="chartId">{{ chart }}</canvas>
+
+    <div class="d-flex justify-content-evenly mt-3">
+        <h3 class="">Expense in the year {{year}} and Month {{month}}</h3>
+        <h3 class="">Total : <b class="text-danger">{{totalExpense}}</b></h3>
+    </div>
+    <div (change)="Onchange()" class="d-flex justify-content-evenly">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="bar" name="type" [(ngModel)]="type">
+            <label class="form-check-label">BarChart</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="line" name="type" [(ngModel)]="type">
+            <label class="form-check-label">Line Chart</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="doughnut" name="type" [(ngModel)]="type">
+            <label class="form-check-label">Doughnut</label>
+        </div>
+        <!-- <div class="form-check">
+                <input class="form-check-input" type="radio" value="radar" name="type" [(ngModel)]="type">
+                <label class="form-check-label">Radar</label>
+            </div> -->
+
+
+    </div>
+</div>

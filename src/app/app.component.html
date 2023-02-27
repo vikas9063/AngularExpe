@@ -1,0 +1,10 @@
+<ngx-ui-loader
+fgsColor="#fff" text="almost done ..."
+fgsType="three-strings" 
+></ngx-ui-loader>
+<app-navheader></app-navheader>
+<div ngxUiLoaderBlurred (blur)="5">
+    <!-- This page content will be blurred/frosted when foreground loader is showed -->
+    <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>

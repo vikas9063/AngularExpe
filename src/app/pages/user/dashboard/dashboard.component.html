@@ -1,0 +1,59 @@
+<div class="container pt-3">
+    <!-- {{formDate}} -->
+    <div class="row">
+        <div class="col-md-8">
+            <form (submit)="OnSubmit()">
+                <div class="d-flex">
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Choose a date</mat-label>                        
+                        <input matInput [matDatepicker]="picker" name="formDate" [(ngModel)]="formDate">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <button mat-flat-button color="primary" class="m-3">Submit</button>        
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="container text-center">
+    <div class="row">
+        <div class="col-md-4" >
+            <app-spentcard [data]="dailyData" > </app-spentcard>
+        </div>
+        <div class="col-md-4">
+            <app-spentcard [data]="monthlyData" ></app-spentcard>
+        </div>
+        <div class="col-md-4">
+            <app-spentcard [data]="yearlyData" ></app-spentcard>
+        </div>
+        
+    </div>
+</div>
+<hr>
+<div class="container">
+    <div class="container text-center">
+        <h2 color="primary">Annual, Monthly Expense reports ...</h2>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5 p-2 bg-left me-2">
+            <canvas id="MyMonthChartDash">{{chart}}</canvas>
+            <div class="container text-center">
+                <h4>In this month Day-wise report</h4>
+                <p>Total-Spent: <strong>{{monthlyTotal}}</strong></p>
+               </div>
+        </div>
+        <div class="col-md-5 p-2 bg-right ">
+            <canvas id="MyYearChartDash">{{chartYear}}</canvas>
+            <div class="container text-center">
+                <h4>In this Year month-wise report</h4>
+                <p>Total-Spent: <strong>{{yearlyTotal}}</strong></p>
+               </div>
+        </div>
+        
+        
+    </div>
+</div>
+

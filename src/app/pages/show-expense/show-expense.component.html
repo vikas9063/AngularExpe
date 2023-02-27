@@ -1,0 +1,22 @@
+<div class="container">
+    <h3 class="text-center text-primary"> Hello <strong class="text-primary">{{userName | uppercase}}</strong> ! Welcome to Expense Tracker, Here is the detailed breakdown of your expenses for this year ...</h3>
+    <hr>
+    <div class="row">
+        <div class="col-md-4 custom-color-light">
+           
+            <app-today-expense></app-today-expense>
+            <app-show-category></app-show-category>
+
+        </div>
+        <div class="col-md-8">
+            <div class="container-fluid text-center">
+                <app-year-expense></app-year-expense>
+                <hr>
+                <app-month-expense-chart></app-month-expense-chart>
+                <hr>
+                
+            </div>
+        </div>
+
+    </div>
+</div>

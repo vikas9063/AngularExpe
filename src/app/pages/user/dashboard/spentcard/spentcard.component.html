@@ -1,0 +1,37 @@
+<mat-card class="example-card">
+    <!-- {{data | json}} -->
+    <mat-card-header>
+        <mat-card-title>{{data.operation}}</mat-card-title>
+        <!-- <mat-card-subtitle>{{}}</mat-card-subtitle> -->
+    </mat-card-header>
+    <hr>
+
+    <mat-card-content>
+        <div>
+            <p *ngIf="data.operation == 'daily'">
+                You spent on this date</p>
+            <p *ngIf="data.operation == 'monthly'">
+                You spent on this month</p>
+            <p *ngIf="data.operation == 'yearly'">
+                You spent on this year</p>
+            <h2 *ngIf="data.operation == 'daily'">
+                {{data.dailyTotal | currency:'INR'}}
+            </h2>
+            <h2 *ngIf="data.operation == 'monthly'">
+                {{data.monthlyTotal | currency:'INR'}}
+            </h2>
+            <h2 *ngIf="data.operation == 'yearly'">
+                {{data.yearlyTotal | currency:'INR'}}
+            </h2>
+        </div>
+
+
+        <hr>
+    </mat-card-content>
+    <mat-card-actions class="d-flex justify-content-end">
+
+        <button mat-button
+            routerLink="/expenses-data/{{data.operation}}/{{data.year+'-'+data.month+'-'+data.date}}">View
+            Details</button>
+    </mat-card-actions>
+</mat-card>

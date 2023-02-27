@@ -1,0 +1,17 @@
+.full-width {
+  width: 50%;
+ 
+}
+
+@media only screen and (max-width: 600px) {
+  .full-width {
+    padding: 0px;
+    width: 100%;
+  }
+}
+.bg-left{
+  background-color: rgba(135,206,250,0.3);
+}
+.bg-right{
+  background-color: rgba(135,206,250,0.3);
+}

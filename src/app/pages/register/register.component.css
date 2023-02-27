@@ -1,0 +1,34 @@
+.right {
+    padding: 60px 40px;
+    width: 100%;
+   
+}
+.image-logo{
+    display: none;
+}
+.full-width {
+    width: 100%;
+    margin: 0px 2px;
+}
+
+.mat-icon {
+    font-size: 150px;
+}
+/* .left{
+    display: none !important;
+} */
+
+@media only screen and (max-width: 600px) {
+    .left {
+        display: none !important;
+    }
+    .right{
+        padding: 0px;
+    }
+    .image-logo{
+        display: block;
+        padding: 0px 30px;
+        border-radius: 50%;
+    }
+    
+}

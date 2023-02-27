@@ -27,3 +27,8 @@ img{
 	color: white;
 	font-family: 'Montserrat', sans-serif;
 }
+@media only screen and (max-width: 600px) {
+  .contact-card{
+    width: 100%;
+}
+}

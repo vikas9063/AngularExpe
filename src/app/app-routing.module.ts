@@ -6,8 +6,10 @@ import { RegisterComponent } from './pages/register/register.component';
 import { AddexpenseComponent } from './pages/addexpense/addexpense.component';
 import { ShowExpenseComponent } from './pages/show-expense/show-expense.component';
 import { ShowExpenseDmyComponent } from './pages/show-expense-dmy/show-expense-dmy.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },

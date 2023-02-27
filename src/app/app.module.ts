@@ -39,6 +39,7 @@ import { SpentcardComponent } from './pages/user/dashboard/spentcard/spentcard.c
 import { ShowExpenseDmyComponent } from './pages/show-expense-dmy/show-expense-dmy.component';
 import { UpdateExpenseComponent } from './pages/show-expense-dmy/update-expense/update-expense.component';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
+import { HomeComponent } from './pages/home/home.component';
 
 
 
@@ -65,6 +66,7 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
     SpentcardComponent,
     ShowExpenseDmyComponent,
     UpdateExpenseComponent,
+    HomeComponent,
     
     
   ],

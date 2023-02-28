@@ -1,6 +1,20 @@
+
+
+
+
 # Expensetracker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
+This project is a expense tracker app.
+
+Technology:
+Angular
+Concepts:
+Interpolation
+Interceptor,
+NgxUILoader,
+Pipes,
+HttpClient
+RouteModule
 
 ## Development server
 
